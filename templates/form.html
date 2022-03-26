@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Đánh giá điện thoại Galaxy S22</title>
+</head>
+<body>
+    <div>
+        <!-- {{df}} -->
+        <h1><a href = {{url_for("display")}}>Click here để xem kết quả</a></h1>
+        <h1>Đánh giá điện thoại Galaxy S22</h1>
+        <form action = "", method = "post">
+            {{ form.name.label }}    
+            {{ form.name }}
+            <br> </br>
+            {{ form.gender.label }}    
+            {{ form.gender }}
+            <br> </br>
+            {{ form.age.label }}    
+            {{ form.age }}
+            <br> </br>
+            {{ form.phone.label }}
+            {{ form.phone }}
+            <br> </br>
+            {{ form.email.label }}
+            {{ form.email }}
+            <br> </br>
+            {{ form.ques1.label }} 
+            {{ form.ques1 }}
+            <br> </br>
+            {{ form.ques2.label }}
+            {{ form.ques2 }}
+            <br> </br>
+            {{ form.ques3.label }}
+            {{ form.ques3 }}
+            <br> </br>
+            {{form.submit()}}
+        </form>
+    </div>
+</body>
+</html>

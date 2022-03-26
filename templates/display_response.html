@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Kết quả bản khảo sát ý kiến người mua Samsung S22</title>
+</head>
+<body>
+    <h1>Kết quả bản khảo sát ý kiến người mua Samsung S22</h1>
+    <br></br>
+    <h3>Thống kê kết quả:</h3> 
+      <li>Số lượng nam giới tham gia khảo sát là: {{df[df['gender']=='Male']['gender'].count()}}</li>
+      <li>Số lượng nữ giới tham gia khảo sát là: {{df[df['gender']=='Female']['gender'].count()}}</li>
+      <img src="{{ url_for('plot_gender')}}" alt="">
+      <li>Độ tuổi trung bình tham gia khảo sát là: {{df['age'].mean()}}</li>
+      <h3>Thống kê câu hỏi thứ nhất</h3>
+        <img src="{{ url_for('plot_ques1')}}" alt="Plot cau hoi 1">
+    <h3>Thống kê câu hỏi thứ hai</h3>
+        <img src="{{ url_for('plot_ques2')}}" alt="Plot cau hoi 2">
+    <h3>Thống kê câu hỏi thứ ba</h3>
+        <img src="{{ url_for('plot_ques3')}}" alt="Plot cau hoi 3">
+    <h3>Danh sách người tham gia khảo sát</h3>
+    <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Email</th>
+            <th scope="col">Color</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <th>Age</td>
+            <th>Gender</td>
+            <th>Email</td>
+          </tr>
+          {% for pp in table %}
+            <tr>
+              <td>{{pp.name}}</th>
+              <td>{{pp.age}}</td>
+              <td>{{pp.gender}}</td>
+              <td>{{pp.email}}</td>
+              <td>{{pp.ques2}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</body>
+</html>
