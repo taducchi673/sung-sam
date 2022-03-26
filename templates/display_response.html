@@ -22,21 +22,15 @@
         <img src="{{ url_for('plot_ques3')}}" alt="Plot cau hoi 3">
     <h3>Danh sách người tham gia khảo sát</h3>
     <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Age</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Email</th>
-            <th scope="col">Color</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
             <th>Name</th>
             <th>Age</td>
             <th>Gender</td>
             <th>Email</td>
+            <th>Question 1</th>
+            <th>Color</th>
+            <th>Price</th>
           </tr>
           {% for pp in table %}
             <tr>
@@ -44,7 +38,9 @@
               <td>{{pp.age}}</td>
               <td>{{pp.gender}}</td>
               <td>{{pp.email}}</td>
+              <td>{{pp.ques1}}</td>
               <td>{{pp.ques2}}</td>
+              <td>{{pp.ques3}}</td>
             </tr>
           {% endfor %}
         </tbody>
