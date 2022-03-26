@@ -121,6 +121,7 @@ def form():
         connection = engine.connect()   
         stmt  = insert(responses).values(name = name_form, age = age_form, gender = gender_form, phone = phone_form, email = email_form, ques1 = ques1_form, ques2 = ques2_form, ques3 =ques3_form)
         connection.execute(stmt)
+        print('Commited')
     return render_template("form.html", form = form)
 
 
